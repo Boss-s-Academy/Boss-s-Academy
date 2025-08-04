@@ -3,8 +3,22 @@
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { useEffect, useState } from 'react';
+import { RiArrowUpSLine } from 'react-icons/ri';
 
 export default function Subjects() {
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const toggleVisibility = () => {
+            setIsVisible(window.scrollY > 300);
+        };
+
+        window.addEventListener('scroll', toggleVisibility);
+        return () => window.removeEventListener('scroll', toggleVisibility);
+    }, []);
+
    const subjects = {
        igcse: [
             {
@@ -889,7 +903,17 @@ export default function Subjects() {
             Get Academic Advice
           </Link>
         </div>
-      </section>
+          </section>
+
+          {isVisible && (
+              <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="fixed bottom-6 right-6 z-50 bg-[#edb232] text-white p-3 rounded-full shadow-lg hover:bg-[#d4a02c] transition-all"
+                  aria-label="Back to top"
+              >
+                  <RiArrowUpSLine className="text-2xl" />
+              </button>
+          )}
 
       <Footer />
     </div>
