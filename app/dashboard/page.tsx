@@ -8,6 +8,7 @@ import { ref, get,set} from 'firebase/database';
 import { auth, rtdb } from '@/lib/firebase';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { RiArrowUpSLine } from 'react-icons/ri';
 
 interface UserPreferences {
   subjects?: string[];
@@ -58,8 +59,15 @@ export default function Dashboard() {
    });
   const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
   const [assignments, setAssignments] = useState<AssignmentData[]>([]);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const toggleVisibility = () => {
+            setIsVisible(window.scrollY > 300);
+        };
+
+        window.addEventListener('scroll', toggleVisibility);
+        return () => window.removeEventListener('scroll', toggleVisibility);
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUser(user);
@@ -466,7 +474,17 @@ export default function Dashboard() {
             <h4 className="font-semibold text-[#0b131c] mb-2">Get Help</h4>
             <p className="text-sm text-gray-600">Contact our support team</p>
           </Link>
-        </div>
+              </div>
+
+        {isVisible && (
+              <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="fixed bottom-6 right-6 z-50 bg-[#edb232] text-white p-3 rounded-full shadow-lg hover:bg-[#d4a02c] transition-all"
+                  aria-label="Back to top"
+              >
+                  <RiArrowUpSLine className="text-2xl" />
+              </button>
+          )}
       </div>
     </div>
   );
