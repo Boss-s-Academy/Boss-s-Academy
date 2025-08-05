@@ -61,34 +61,39 @@ export default function Dashboard() {
   const [assignments, setAssignments] = useState<AssignmentData[]>([]);
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const toggleVisibility = () => {
+    useEffect(() => {
+        // Scroll listener
+        const toggleVisibility = () => {
             setIsVisible(window.scrollY > 300);
         };
-
         window.addEventListener('scroll', toggleVisibility);
-        return () => window.removeEventListener('scroll', toggleVisibility);
-    const unsubscribe = auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        setUser(user);
-        setProfileData(prev => ({
-          ...prev,
-          displayName: user.displayName || '',
-          email: user.email || ''
-        }));
-          await Promise.all([
-              fetchUserPreferences(user.uid),
-              loadUserNames(user.uid),
-              fetchAssignmentData(user.uid),
-              fetchStudyData(user.uid)
-          ]);
-      } else {
-      }
-      setLoading(false);
-    });
 
-    return () => unsubscribe();
-  }, [router]);
+        // Auth listener
+        const unsubscribe = auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                setUser(user);
+                setProfileData(prev => ({
+                    ...prev,
+                    displayName: user.displayName || '',
+                    email: user.email || '',
+                }));
+                await Promise.all([
+                    fetchUserPreferences(user.uid),
+                    loadUserNames(user.uid),
+                    fetchAssignmentData(user.uid),
+                    fetchStudyData(user.uid),
+                ]);
+            }
+            setLoading(false);
+        });
+
+        // ✅ Combined cleanup
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+            unsubscribe();
+        };
+    }, [router]);
+
 
   const loadUserNames = async (uid: string) => {
       try {

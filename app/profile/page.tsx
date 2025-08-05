@@ -19,6 +19,10 @@ export default function ProfilePage() {
   const [preferences, setPreferences] = useState<UserPreferences>({
     subjects: []
   });
+  const [activeTab, setActiveTab] = useState('profile');
+  const [activeTab1, setActiveTab1] = useState('subject');
+  const [message, setMessage] = useState({ type: '', text: '' });
+  const router = useRouter();
   
   const [profileData, setProfileData] = useState({
       displayName: '',
@@ -29,13 +33,6 @@ export default function ProfilePage() {
       firstname: '',
       lastname: '',
    });
-
-  
-  const [activeTab, setActiveTab] = useState('profile');
-  const [activeTab1, setActiveTab1] = useState('subject');
-  const [message, setMessage] = useState({ type: '', text: '' });
-  const router = useRouter();
-  const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {

@@ -1,10 +1,12 @@
 ﻿'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, fetchSignInMethodsForEmail} from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -12,6 +14,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const router = useRouter();
+  const [isLogin, setIsLogin] = useState(true);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +31,7 @@ export default function LoginPage() {
     }
   };
 
-    const handleGoogleLogin = async () => {
+  const handleGoogleLogin = async () => {
         const provider = new GoogleAuthProvider();
         setError('');
         setLoading(true);
@@ -68,119 +71,128 @@ export default function LoginPage() {
 
 
   return (
-      <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" style={{
-          background: "radial-gradient(circle at center, #325d8e, #0b131c)"
-      }}>
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-bold text-white">
-            Sign in to Boss&apos;s Academy
-          </h2>
-          <p className="mt-2 text-center text-sm text-[#a6a6a6]">
-            Or{' '}
-            <Link href="/signup" className="font-medium text-[#edb232] hover:text-[#edb232]/80 cursor-pointer">
-              create a new account
-            </Link>
-          </p>
-        </div>
-
-        <div className="bg-white rounded-lg shadow-xl p-8">
-          <form className="space-y-6" onSubmit={handleLogin}>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0b131c] to-[#325d8e] p-4">
+      <div className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-500">
+        
+        {/* Left Panel */}
+        <div className="w-full md:w-1/2 p-8 space-y-6">
+          <AnimatePresence mode="wait">
+            {isLogin ? (
+              <motion.div
+                key="login"
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+            <div className="text-center">
+              <h2 className="text-3xl font-extrabold text-gray-900">Welcome Back</h2>
+              <p className="mt-2 text-sm text-gray-600">
+                Sign in to <span className="text-[#edb232] font-semibold">Boss's Academy</span> 
+              </p>
+            </div>
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded text-sm">
                 {error}
               </div>
             )}
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#edb232] focus:border-[#edb232] text-sm"
-                placeholder="Enter your email"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#edb232] focus:border-[#edb232] text-sm"
-                placeholder="Enter your password"
-              />
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
+            <form className="space-y-5" onSubmit={handleLogin}>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                 <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 text-[#edb232] focus:ring-[#edb232] border-gray-300 rounded"
+                  id="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-[#edb232] focus:border-[#edb232] text-sm"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  Remember me
+              </div>
+
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  className="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-[#edb232] focus:border-[#edb232] text-sm"
+                />
+              </div>
+
+              <div className="flex justify-between items-center text-sm">
+                <label className="flex items-center space-x-2 text-gray-600">
+                  <input type="checkbox" className="form-checkbox text-[#edb232]" />
+                  <span>Remember me</span>
                 </label>
+                <Link href="/forgot-password" className="text-[#edb232] hover:underline">Forgot password?</Link>
               </div>
 
-              <div className="text-sm">
-                <Link href="/forgot-password" className="font-medium text-[#edb232] hover:text-[#edb232]/80 cursor-pointer">
-                  Forgot your password?
-                </Link>
-              </div>
-            </div>
-
-            <div>
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#edb232] hover:bg-[#edb232]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#edb232] disabled:opacity-50 whitespace-nowrap cursor-pointer">
+                className="w-full bg-[#edb232] hover:bg-[#edb232]/90 text-white font-semibold py-3 rounded-lg shadow transition-all duration-150 disabled:opacity-50"
+              >
                 {loading ? 'Signing in...' : 'Sign in'}
               </button>
+            </form>
+
+            <div className="flex items-center space-x-2 text-sm py-5 text-gray-500">
+              <div className="flex-grow border-t border-gray-300"></div>
+              <span className="px-2">or</span>
+              <div className="flex-grow border-t border-gray-300"></div>
             </div>
 
-            <div className="mt-6">
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">Or continue with</span>
-                </div>
-              </div>
+            <button
+              onClick={handleGoogleLogin}
+              type="button"
+              className="w-full flex justify-center items-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-100 text-sm font-medium text-gray-700 transition"
+            >
+               <i className="ri-google-fill text-red-500 mr-2 w-5 h-5 flex items-center justify-center"></i>
+              Continue with Google
+            </button>
 
-              <div className="mt-6">
-                <button
-                  type="button"
-                  onClick={handleGoogleLogin}
-                  className="w-full flex justify-center items-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#edb232] whitespace-nowrap cursor-pointer"
-                >
-                  <i className="ri-google-fill text-red-500 mr-2 w-5 h-5 flex items-center justify-center"></i>
-                  Sign in with Google
-                </button>
-              </div>
+            <div className="text-center text-sm text-gray-500">
+              <Link href="/" className="text-[#edb232] hover:underline">← Back to Home</Link>
             </div>
-          </form>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="signup"
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -100, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="text-3xl font-extrabold text-gray-900 text-center">Create Account</h2>
+                <p className="text-sm text-gray-600 text-center">
+                  Join <span className="text-[#edb232] font-semibold">Boss's Academy</span>
+                </p>
+                <form className="space-y-4">
+                  <input type="text" placeholder="Full Name" className="w-full px-4 py-2 border rounded-lg" />
+                  <input type="email" placeholder="Email" className="w-full px-4 py-2 border rounded-lg" />
+                  <input type="password" placeholder="Password" className="w-full px-4 py-2 border rounded-lg" />
+                  <button className="w-full bg-[#edb232] text-white py-2 rounded-lg">Sign Up</button>
+                </form>
+                <p className="text-sm text-center text-gray-500">
+                  Already have an account?{' '}
+                  <button onClick={() => setIsLogin(true)} className="text-[#edb232] hover:underline">Sign in</button>
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        <div className="text-center">
-          <Link href="/" className="text-[#edb232] hover:text-[#edb232]/80 cursor-pointer">
-            ← Back to Home
-          </Link>
+        {/* Right Panel */}
+              <div className="hidden md:flex w-1/2 bg-gradient-to-r from-[#0b131c] to-[#325d8e] items-center justify-center p-8 text-white text-center">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Boss's Academy</h3>
+            <p className="text-sm">Learn. Build. Lead.</p>
+          </div>
         </div>
       </div>
     </div>
