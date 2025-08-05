@@ -21,6 +21,7 @@ export default function ProfilePage() {
   });
   const [activeTab, setActiveTab] = useState('profile');
   const [activeTab1, setActiveTab1] = useState('subject');
+  const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
   const [message, setMessage] = useState({ type: '', text: '' });
   const router = useRouter();
   
