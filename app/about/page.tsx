@@ -102,7 +102,7 @@ export default function About() {
 
                         <div className="bg-white p-4 rounded-lg shadow-lg">
                             <div
-                                className="text-6xl sm:text-4xl md:text-6xl font-bold text-[#edb232] mb-4 break-words leading-tight"
+                                className="text-4xl sm:text-2xl md:text-6xl font-bold text-[#edb232] mb-4 break-words leading-tight"
                                 style={{ fontFamily: 'Pacifico, serif' }}
                             >
                                 "Learn Today, Lead Tomorrow"
