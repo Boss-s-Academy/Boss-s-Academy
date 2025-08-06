@@ -100,7 +100,7 @@ export default function Dashboard() {
     const [selectedClassStudents, setSelectedClassStudents] = useState<StudentData[]>([]);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
-    const schoolId = localStorage.getItem('schoolId');
+    const schoolId = profileData.school;
     const [teacherClasses, setTeacherClasses] = useState<TeacherClass[]>([]);
 
     useEffect(() => {
