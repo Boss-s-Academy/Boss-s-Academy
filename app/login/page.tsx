@@ -80,11 +80,7 @@ export default function LoginPage() {
 
       try {
           await signInWithEmailAndPassword(auth, email, password);
-          if (userType === 'student') {
               router.push('/dashboard');
-          } else if(userType === 'teacher'){
-              router.push('/dashboard/teacher');
-          }
       } catch (error: any) {
         setError(error.message);
       } finally {

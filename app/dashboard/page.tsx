@@ -100,7 +100,6 @@ export default function Dashboard() {
     const [selectedClassStudents, setSelectedClassStudents] = useState<StudentData[]>([]);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [availableSubjects, setAvailableSubjects] = useState<string[]>([]);
-    const schoolId = profileData.school;
     const [teacherClasses, setTeacherClasses] = useState<TeacherClass[]>([]);
 
     useEffect(() => {
@@ -113,19 +112,25 @@ export default function Dashboard() {
         // Auth listener
         const unsubscribe = auth.onAuthStateChanged(async (user) => {
             if (user) {
+                const userRef = ref(rtdb, `Users/${user.uid}`);
+                const snapshot = await get(userRef);
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    setProfileData(prev => ({
+                        ...prev,
+                        firstname: data.firstName || '',
+                        lastname: data.lastName || '',
+                        level: data.syllabus || '',
+                        school: data.school || '',
+                        userType: data.userType || ''
+                    }));
+                }
                 setUser(user);
                 setProfileData(prev => ({
                     ...prev,
                     displayName: user.displayName || '',
                     email: user.email || '',
                 }));
-                await Promise.all([
-                    fetchUserPreferences(user.uid),
-                    loadUserNames(user.uid),
-                    fetchAssignmentData(user.uid),
-                    fetchStudyData(user.uid),
-                    fetchTeacherClasses(user.uid)
-                ]);
             }
             setLoading(false);
         });
@@ -136,27 +141,19 @@ export default function Dashboard() {
             unsubscribe();
         };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [router, ]);
+    }, [router]);
 
-    const loadUserNames = async (uid: string) => {
-        try {
-            const userRef = ref(rtdb, `Users/${uid}`);
-            const snapshot = await get(userRef);
-            if (snapshot.exists()) {
-                const data = snapshot.val();
-                setProfileData(prev => ({
-                    ...prev,
-                    firstname: data.firstName || '',
-                    lastname: data.lastName || '',
-                    level: data.syllabus || '',
-                    school: data.school || '',
-                    userType: data.userType || ''
-                }));
+    useEffect(() => {
+        if (user && profileData.school && profileData.userType) {
+            fetchUserPreferences(user.uid);
+            fetchAssignmentData(user.uid);
+            fetchStudyData(user.uid);
+            if (profileData.userType === 'teacher') {
+                fetchTeacherClasses(user.uid);
             }
-        } catch (error) {
-            console.error('Error loading names:', error);
         }
-    };
+    }, [user, profileData.school, profileData.userType]);
+
 
   const fetchUserPreferences = async (uid: string) => {
       try {
@@ -177,7 +174,7 @@ export default function Dashboard() {
                   setAvailableSubjects(allSubjects);
               }
           } else {
-              const userRef = ref(rtdb, `Schools/${schoolId}/${uid}/preferences`);
+              const userRef = ref(rtdb, `Schools/${profileData.school}/${uid}/preferences`);
               const snapshot = await get(userRef);
               if (snapshot.exists()) {
                   const data = snapshot.val();
@@ -300,7 +297,7 @@ export default function Dashboard() {
     };
 
     const fetchTeacherClasses = async (uid: string) => {
-        const prefsRef = ref(rtdb, `Schools/${schoolId}/${uid}/preferences`);
+        const prefsRef = ref(rtdb, `Schools/${profileData.school}/${uid}/preferences`);
         const snapshot = await get(prefsRef);
         if (!snapshot.exists()) return;
 
@@ -319,7 +316,7 @@ export default function Dashboard() {
     };
 
     const fetchStudentsForClass = async (subject: string, className: string) => {
-        const classRef = ref(rtdb, `Schools/${schoolId}/${user?.uid}/preferences/${subject}/${className}`);
+        const classRef = ref(rtdb, `Schools/${profileData.school}/${user?.uid}/preferences/${subject}/${className}`);
         const classSnap = await get(classRef);
 
         const students = [];
