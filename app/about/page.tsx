@@ -100,8 +100,11 @@ export default function About() {
                             At Boss's Academy, we believe that every student deserves access to high-quality educational resources that inspire learning and foster academic excellence. Founded on January 23, 2023, our mission is to bridge the gap between traditional education and modern learning needs.
                         </p>
 
-                        <div className="bg-white p-8 rounded-lg shadow-lg">
-                            <div className="text-6xl font-bold text-[#edb232] mb-4" style={{ fontFamily: 'Pacifico, serif' }}>
+                        <div className="bg-white p-4 rounded-lg shadow-lg">
+                            <div
+                                className="text-6xl sm:text-5xl md:text-6xl font-bold text-[#edb232] mb-4 break-words leading-tight"
+                                style={{ fontFamily: 'Pacifico, serif' }}
+                            >
                                 "Learn Today, Lead Tomorrow"
                             </div>
                             <p className="text-lg text-[#a6a6a6]">
