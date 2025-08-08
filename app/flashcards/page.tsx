@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import Header from '../../components/Header';
@@ -15,7 +15,7 @@ export default function Flashcards() {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ 
-            backgroundImage: `url('https://readdy.ai/api/search-image?query=Stack%20of%20colorful%20flashcards%20and%20study%20cards%20arranged%20on%20a%20wooden%20desk%2C%20bright%20educational%20setting%20with%20organized%20learning%20materials%2C%20modern%20study%20tools%20with%20clean%20design%2C%20academic%20environment%20promoting%20memorization%20and%20active%20learning%2C%20professional%20educational%20photography&width=1920&height=600&seq=flashcards-hero&orientation=landscape')` 
+            backgroundImage: `url('/images/subject.jpg')` 
           }}
         ></div>
         
@@ -30,14 +30,14 @@ export default function Flashcards() {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <div className="w-24 h-24 flex items-center justify-center bg-[#edb232] rounded-full mx-auto mb-6">
                 <i className="ri-flashlight-line text-4xl text-[#0b131c]"></i>
               </div>
-              <h2 className="text-4xl font-bold text-[#0b131c] mb-6">
+              <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-6">
                 Coming Soon!
               </h2>
               <p className="text-xl text-[#a6a6a6] mb-8">
@@ -46,64 +46,64 @@ export default function Flashcards() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg">
                 <div className="w-16 h-16 flex items-center justify-center bg-[#325d8e] rounded-full mx-auto mb-4">
                   <i className="ri-brain-line text-2xl text-white"></i>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0b131c] mb-4">Smart Learning</h3>
+                <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-4">Smart Learning</h3>
                 <p className="text-[#a6a6a6]">
                   AI-powered spaced repetition algorithm that adapts to your learning pace and optimizes retention.
                 </p>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-white p-8 dark:bg-gray-900 rounded-lg shadow-lg">
                 <div className="w-16 h-16 flex items-center justify-center bg-[#edb232] rounded-full mx-auto mb-4">
                   <i className="ri-stack-line text-2xl text-[#0b131c]"></i>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0b131c] mb-4">Organized Decks</h3>
+                <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-4">Organized Decks</h3>
                 <p className="text-[#a6a6a6]">
                   Pre-made flashcard decks for every subject, plus the ability to create and customize your own.
                 </p>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="bg-white p-8 dark:bg-gray-900 rounded-lg shadow-lg">
                 <div className="w-16 h-16 flex items-center justify-center bg-[#325d8e] rounded-full mx-auto mb-4">
                   <i className="ri-bar-chart-line text-2xl text-white"></i>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0b131c] mb-4">Progress Tracking</h3>
+                <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-4">Progress Tracking</h3>
                 <p className="text-[#a6a6a6]">
                   Detailed analytics showing your learning progress, retention rates, and areas for improvement.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg mb-12">
-              <h3 className="text-2xl font-bold text-[#0b131c] mb-6">What to Expect</h3>
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg mb-12">
+              <h3 className="text-2xl dark:text-white font-bold text-[#0b131c] mb-6">What to Expect</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Interactive flip animations</span>
+                    <span className="text-[#0b131c] dark:text-white">Interactive flip animations</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Multi-media support (images, audio)</span>
+                    <span className="text-[#0b131c] dark:text-white">Multi-media support (images, audio)</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Offline study mode</span>
+                    <span className="text-[#0b131c] dark:text-white">Offline study mode</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Collaborative study decks</span>
+                    <span className="text-[#0b131c] dark:text-white">Collaborative study decks</span>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -111,25 +111,25 @@ export default function Flashcards() {
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Cross-platform synchronization</span>
+                    <span className="text-[#0b131c] dark:text-white">Cross-platform synchronization</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Performance analytics</span>
+                    <span className="text-[#0b131c] dark:text-white">Performance analytics</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Study reminders</span>
+                    <span className="text-[#0b131c] dark:text-white">Study reminders</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-6 h-6 flex items-center justify-center bg-[#edb232] rounded-full mr-3">
                       <i className="ri-check-line text-sm text-[#0b131c]"></i>
                     </div>
-                    <span className="text-[#0b131c]">Export/import functionality</span>
+                    <span className="text-[#0b131c] dark:text-white">Export/import functionality</span>
                   </div>
                 </div>
               </div>
@@ -159,10 +159,10 @@ export default function Flashcards() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Development Timeline</h2>
+            <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Development Timeline</h2>
             <p className="text-xl text-[#a6a6a6]">
               Our roadmap for bringing you the best digital flashcard experience
             </p>
@@ -175,13 +175,13 @@ export default function Flashcards() {
               <div className="space-y-12">
                 <div className="flex items-center">
                   <div className="w-1/2 pr-8 text-right">
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h3 className="text-xl font-semibold text-[#0b131c] mb-2">Phase 1: Design & Planning</h3>
+                    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                      <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-2">Phase 1: Design & Planning</h3>
                       <p className="text-[#a6a6a6] mb-2">User research, UI/UX design, and feature planning</p>
-                      <span className="text-sm text-[#325d8e] font-semibold">Completed</span>
+                      <span className="text-sm text-[#edb232] font-semibold">Preparing</span>
                     </div>
                   </div>
-                  <div className="w-8 h-8 flex items-center justify-center bg-[#325d8e] rounded-full relative z-10">
+                  <div className="w-8 h-8 flex items-center justify-center bg-[#edb232] rounded-full relative z-10">
                     <i className="ri-check-line text-white"></i>
                   </div>
                   <div className="w-1/2 pl-8"></div>
@@ -189,22 +189,22 @@ export default function Flashcards() {
                 
                 <div className="flex items-center">
                   <div className="w-1/2 pr-8"></div>
-                  <div className="w-8 h-8 flex items-center justify-center bg-[#edb232] rounded-full relative z-10">
-                    <i className="ri-code-line text-[#0b131c]"></i>
+                  <div className="w-8 h-8 flex items-center justify-center bg-[#a6a6a6] rounded-full relative z-10">
+                    <i className="ri-code-line text-[#ffffff]"></i>
                   </div>
                   <div className="w-1/2 pl-8">
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h3 className="text-xl font-semibold text-[#0b131c] mb-2">Phase 2: Development</h3>
+                    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                      <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-2">Phase 2: Development</h3>
                       <p className="text-[#a6a6a6] mb-2">Core functionality, algorithms, and database design</p>
-                      <span className="text-sm text-[#edb232] font-semibold">In Progress</span>
+                      <span className="text-sm text-[#a6a6a6] font-semibold">Upcoming</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <div className="w-1/2 pr-8 text-right">
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h3 className="text-xl font-semibold text-[#0b131c] mb-2">Phase 3: Testing</h3>
+                    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                      <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-2">Phase 3: Testing</h3>
                       <p className="text-[#a6a6a6] mb-2">Beta testing, bug fixes, and performance optimization</p>
                       <span className="text-sm text-[#a6a6a6] font-semibold">Upcoming</span>
                     </div>
@@ -221,10 +221,10 @@ export default function Flashcards() {
                     <i className="ri-rocket-line text-white"></i>
                   </div>
                   <div className="w-1/2 pl-8">
-                    <div className="bg-gray-50 p-6 rounded-lg">
-                      <h3 className="text-xl font-semibold text-[#0b131c] mb-2">Phase 4: Launch</h3>
+                    <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                      <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-2">Phase 4: Launch</h3>
                       <p className="text-[#a6a6a6] mb-2">Official release and feature rollout</p>
-                      <span className="text-sm text-[#a6a6a6] font-semibold">Q2 2024</span>
+                      <span className="text-sm text-[#a6a6a6] font-semibold">Yet to be determined</span>
                     </div>
                   </div>
                 </div>

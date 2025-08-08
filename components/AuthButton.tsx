@@ -5,6 +5,7 @@ import { User, signOut } from 'firebase/auth';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { auth, rtdb } from '@/lib/firebase';
+import ThemeToogle from './ThemeToggle.tsx';
 import { ref, get,} from 'firebase/database';
 
 export default function AuthButton() {
@@ -77,17 +78,18 @@ export default function AuthButton() {
 
   if (user) {
     return (
-      <div className="relative">
+        <div className="relative">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex items-center space-x-2 text-white hover:text-[#edb232] transition-colors cursor-pointer"
+          className="flex items-center space-x-2 text-white  transition-colors cursor-pointer"
         >
-          <div className="w-8 h-8 bg-[#edb232] rounded-full flex items-center justify-center">
+                <ThemeToogle />
+          <div className="w-8 h-8 bg-[#edb232] rounded-full flex hover:text-[#edb232] items-center justify-center">
             <span className="text-[#0b131c] font-semibold text-sm">
               {profileData.firstname?.charAt(0) || user?.email?.charAt(0)}
             </span>
           </div>
-          <span className="hidden md:inline whitespace-nowrap">
+          <span className=" whitespace-nowrap hover:text-[#edb232]">
             {profileData.firstname && profileData.lastname
                       ? `${profileData.firstname} ${profileData.lastname}`
                       : user?.displayName || 'User'}

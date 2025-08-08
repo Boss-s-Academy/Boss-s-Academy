@@ -260,7 +260,7 @@ const aLevelSubjects: string[] = [
   }
 
   return (
-      <div className="min-h-screen bg-[#f8f9fa] ">
+      <div className="min-h-screen bg-[#f8f9fa] dark:bg-gray-800 ">
           <Header />
       <div className="container mx-auto px-6 max-w-4xl py-6">
         <div className="mb-8">
@@ -268,9 +268,9 @@ const aLevelSubjects: string[] = [
             <Link href="/dashboard" className="text-[#325d8e] hover:text-[#edb232] transition-colors cursor-pointer">
               <i className="ri-arrow-left-line w-6 h-6 flex items-center justify-center"></i>
             </Link>
-            <h1 className="text-3xl font-bold text-[#0b131c]">Profile Settings</h1>
+            <h1 className="text-3xl font-bold dark:text-white text-[#0b131c]">Profile Settings</h1>
           </div>
-          <p className="text-gray-600">Manage your account information and preferences</p>
+          <p className="text-[#a6a6a6]">Manage your account information and preferences</p>
         </div>
 
         {message.text && (
@@ -283,14 +283,14 @@ const aLevelSubjects: string[] = [
           </div>
         )}
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
           <div className="flex border-b border-gray-200">
             <button
               onClick={() => setActiveTab('profile')}
               className={`px-6 py-4 font-medium whitespace-nowrap cursor-pointer ${
                 activeTab === 'profile'
                   ? 'border-b-2 border-[#edb232] text-[#edb232]'
-                  : 'text-gray-500 hover:text-[#0b131c]'
+                  : 'text-gray-500 hover:text-[#0b131c] dark:hover:text-[#ffffff]'
               }`}
             >
               <i className="ri-user-line w-5 h-5 flex items-center justify-center inline-block mr-2"></i>
@@ -301,7 +301,7 @@ const aLevelSubjects: string[] = [
               className={`px-6 py-4 font-medium whitespace-nowrap cursor-pointer ${
                 activeTab === 'preferences'
                   ? 'border-b-2 border-[#edb232] text-[#edb232]'
-                  : 'text-gray-500 hover:text-[#0b131c]'
+                  : 'text-gray-500 hover:text-[#0b131c] dark:hover:text-[#ffffff]'
               }`}
             >
               <i className="ri-settings-3-line w-5 h-5 flex items-center justify-center inline-block mr-2"></i>
@@ -319,7 +319,7 @@ const aLevelSubjects: string[] = [
                     </span>
                   </div>
                   <div>
-                    <h2 className="text-xl font-semibold text-[#0b131c]">
+                    <h2 className="text-xl dark:text-white font-semibold text-[#0b131c]">
                       {profileData.firstname && profileData.lastname
                       ? `${profileData.firstname} ${profileData.lastname}`
                       : user?.displayName || 'User'}
@@ -330,7 +330,7 @@ const aLevelSubjects: string[] = [
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block dark:text-white text-sm font-medium text-gray-700 mb-2">
                       First Name
                     </label>
                     <input
@@ -343,7 +343,7 @@ const aLevelSubjects: string[] = [
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm dark:text-white font-medium text-gray-700 mb-2">
                       Last Name
                     </label>
                     <input
@@ -356,7 +356,7 @@ const aLevelSubjects: string[] = [
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm dark:text-white font-medium text-gray-700 mb-2">
                       Email Address
                     </label>
                     <input
@@ -369,10 +369,10 @@ const aLevelSubjects: string[] = [
                 </div>
 
                 <div className="border-t pt-6">
-                  <h3 className="text-lg font-medium text-[#0b131c] mb-4">Change Password</h3>
+                  <h3 className="text-lg dark:text-white font-medium text-[#0b131c] mb-4">Change Password</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block dark:text-white text-sm font-medium text-gray-700 mb-2">
                         Current Password
                       </label>
                       <input
@@ -384,7 +384,7 @@ const aLevelSubjects: string[] = [
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block dark:text-white text-sm font-medium text-gray-700 mb-2">
                         New Password
                       </label>
                       <input
@@ -396,7 +396,7 @@ const aLevelSubjects: string[] = [
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block dark:text-white text-sm font-medium text-gray-700 mb-2">
                         Confirm Password
                       </label>
                       <input
@@ -425,7 +425,7 @@ const aLevelSubjects: string[] = [
             {activeTab === 'preferences' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-medium text-[#0b131c] mb-4">Change Subjects</h3>
+                  <h3 className="text-lg dark:text-white font-medium text-[#0b131c] mb-4">Change Subjects</h3>
                     <div className="flex justify-center gap-6 mb-6 text-sm font-semibold text-[#0b131c]">
                       <button onClick={() => setActiveTab1('IGCSE')} className={`${activeTab1 === 'IGCSE' ? 'text-[#edb232]' : 'text-gray-500'} hover:text-[#edb232]`}>
                         Cambridge IGCSE
@@ -441,7 +441,7 @@ const aLevelSubjects: string[] = [
                     {activeTab1 === 'IGCSE' && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {igcseSubjects.map((subject) => (
-                          <label key={subject} className="flex items-center gap-2">
+                            <label key={subject} className="flex dark:text-white items-center gap-2">
                             <input
                               type="checkbox"
                               checked={preferences.subjects.includes(subject)}
@@ -457,7 +457,7 @@ const aLevelSubjects: string[] = [
                     {activeTab1 === 'A-Level' && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {aLevelSubjects.map((subject) => (
-                          <label key={subject} className="flex items-center gap-2">
+                            <label key={subject} className="flex dark:text-white items-center gap-2">
                             <input
                               type="checkbox"
                               checked={preferences.subjects.includes(subject)}
@@ -474,12 +474,12 @@ const aLevelSubjects: string[] = [
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {/* Group 1 */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Group 1 - Studies in Language and Literature
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
                             {['English A Language and Literature'].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                                <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}
@@ -494,7 +494,7 @@ const aLevelSubjects: string[] = [
 
                         {/* Group 2 */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Group 2 - Language Acquisition
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
@@ -503,7 +503,7 @@ const aLevelSubjects: string[] = [
                               'French B',
                               'Spanish AB Initio'
                             ].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                                <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}
@@ -518,7 +518,7 @@ const aLevelSubjects: string[] = [
 
                         {/* Group 3 */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Group 3 - Individuals and Societies
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
@@ -528,7 +528,7 @@ const aLevelSubjects: string[] = [
                               'Geography',
                               'History'
                             ].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                              <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}
@@ -543,7 +543,7 @@ const aLevelSubjects: string[] = [
 
                         {/* Group 4 */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Group 4 - Sciences
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
@@ -553,7 +553,7 @@ const aLevelSubjects: string[] = [
                               'Environmental Systems and Societies',
                               'Physics'
                             ].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                                <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}
@@ -568,7 +568,7 @@ const aLevelSubjects: string[] = [
 
                         {/* Group 5 */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Group 5 - Mathematics
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
@@ -576,7 +576,7 @@ const aLevelSubjects: string[] = [
                               'Mathematics Applications and Interpretations',
                               'Mathematics Analysis and Approaches'
                             ].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                                <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}
@@ -591,14 +591,14 @@ const aLevelSubjects: string[] = [
 
                         {/* Group 6 */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Group 6 - The Arts
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
                             {[
                               'Visual Arts'
                             ].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                                <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}
@@ -613,7 +613,7 @@ const aLevelSubjects: string[] = [
 
                         {/* Core Courses */}
                         <div>
-                          <h4 className="text-[#0b131c] font-semibold text-lg mb-2">
+                          <h4 className="text-[#0b131c] dark:text-white font-semibold text-lg mb-2">
                             Core Courses
                           </h4>
                           <div className="grid grid-cols-1 md:grid-cols gap-2">
@@ -622,7 +622,7 @@ const aLevelSubjects: string[] = [
                               'Extended Essay',
                               'Theory of Knowledge'
                             ].map(subject => (
-                              <label key={subject} className="flex items-center gap-2">
+                                <label key={subject} className="flex dark:text-white items-center gap-2">
                                 <input
                                   type="checkbox"
                                   checked={preferences.subjects.includes(subject)}

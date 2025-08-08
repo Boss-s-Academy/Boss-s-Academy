@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import AuthButton from './AuthButton';
+
 import Image from 'next/image';
 
 export default function Header() {
@@ -43,6 +44,7 @@ export default function Header() {
               Contact
             </Link>
           </nav>
+
 
           <div className="hidden md:flex">
             <AuthButton />

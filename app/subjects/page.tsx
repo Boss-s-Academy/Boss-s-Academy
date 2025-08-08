@@ -338,7 +338,7 @@ export default function Subjects() {
        ],
        ibcore: [
            {
-               name: 'Creativity,Activity,Service',
+               name: 'Creativity, Activity, Service',
                notes: '',
                cs: 'https://drive.google.com/drive/folders/1xZgui7GkE468JXwe5SiFIT3EZPz9bZpR?usp=drive_link'
            },
@@ -381,13 +381,13 @@ export default function Subjects() {
       </section>
 
       {/* Select Examination Board */}
-      <section className="py-8 bg-white ">
+      <section className="py-8 bg-white dark:bg-gray-900">
         <div className="container mx-auto px">
-          <div className="bg-gradient-to-r from-[#0b131c] to-[#325d8e] p-8 rounded-lg text-white justify-center ">
+                  <div className=" p-8 rounded-lg text-white justify-center bg-gray-50 dark:bg-gray-800 shadow-lg ">
             <h2 className="text-4xl font-bold text-[#edb232] mb-4 flex gap-3 justify-center" style={{ fontFamily: 'Pacifico' }}>
                Select Your Examination Board
             </h2>
-           <p className="text-xl text-[#a6a6a6] flex flex-col md:flex-row gap-3 justify-center">
+           <p className="text-xl text-[#a6a6a6] flex flex-col md:flex-row gap-3  justify-center">
               <a href="#igcse" className="hover:text-[#ffffff] transition-colors">Cambridge IGCSE</a>
               <a href="#alevel" className="hover:text-[#ffffff] transition-colors">Cambridge AS & A - Level</a>
               <a href="#ib" className="hover:text-[#ffffff] transition-colors">International Baccalaureate</a>
@@ -396,10 +396,10 @@ export default function Subjects() {
         </div>
       </section>
       {/* IGCSE Section */}
-      <section id="igcse" className="py-16 bg-gray-50">
+      <section id="igcse" className="py-16 bg-gray-50 dark:bg-gray-800 ">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+              <h2 className="text-4xl font-bold dark:text-white text-[#0b131c] mb-4 flex items-center justify-center gap-3">
                 <i className="ri-book-line text-3xl text-[#ffffff] w-16 h-16 flex items-center justify-center bg-blue-500 rounded-full font-normal"></i>
                 IGCSE Resources
               </h2>
@@ -412,12 +412,12 @@ export default function Subjects() {
               {subjects.igcse.map((subject, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift"
+                  className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift"
                 >
                   <div className="w-10 h-10 flex items-center justify-center bg-blue-500 rounded-xl mb-4">
                     <i className="ri-book-line text-xl text-[#ffffff]"></i>
                   </div>
-                  <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+                  <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
 
                   <div className="space-y-2">
                     <button
@@ -471,10 +471,10 @@ export default function Subjects() {
         </section>
 
       {/* A-Level Section */}
-     <section id="alevel" className="py-16 bg-white">
+     <section id="alevel" className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-           <h2 className="text-4xl font-bold text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+           <h2 className="text-4xl font-bold dark:text-white text-[#0b131c] mb-4 flex items-center justify-center gap-3">
                <i className="ri-book-line text-3xl text-[#ffffff] w-16 h-16 flex items-center justify-center bg-green-500 rounded-full font-normal "></i>
                A-Level Resources
             </h2>
@@ -486,11 +486,11 @@ export default function Subjects() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {subjects.alevel
                           .map((subject, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+              <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
                 <div className="w-10 h-10 flex items-center justify-center bg-green-500 rounded-xl mb-4">
                  <i className="ri-book-line text-xl text-[#ffffff]"></i>
                 </div>
-                <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+                <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
                 <div className="space-y-2">
                 <button className="w-full bg-gradient-to-r from-[#0b131c] to-[#325d8e] text-white py-1 px-4 rounded-xl hover:from-[#325d8e] hover:to-[#0b131c] transition-all cursor-pointer whitespace-nowrap flex items-center justify-center"
                       onClick={() => window.open(subject.cs, '_blank')}                        >
@@ -519,10 +519,10 @@ export default function Subjects() {
       </section>
 
       {/* IB Section */}
-     <section id="ib" className="py-8 bg-gray-50">
+     <section id="ib" className="py-8 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto ">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+          <h2 className="text-4xl font-bold dark:text-white text-[#0b131c] mb-4 flex items-center justify-center gap-3">
             <i className="ri-book-line text-3xl text-white w-16 h-16 flex items-center justify-center bg-purple-500 rounded-full font-normal"></i>
             IB Resources
           </h2>
@@ -530,7 +530,7 @@ export default function Subjects() {
             Complete study materials for International Baccalaureate Diploma Programme
           </p>
         </div>
-        <div className="bg-gradient-to-r from-[#0b131c] to-[#325d8e] p-6 rounded-xl text-white mx-auto">
+                  <div className=" p-6 rounded-xl text-white mx-auto bg-white dark:bg-gray-900 shadow-lg " >
           <p className="text-xl text-[#a6a6a6] flex flex-col md:flex-row gap-3 justify-center">
               <a href="#g1" className="hover:text-[#edb232] transition-colors">Group 1 : Studies in languages and Literature </a>
               <a href="#g2" className="hover:text-[#edb232] transition-colors">Group 2 : Language acquisition</a>
@@ -546,18 +546,18 @@ export default function Subjects() {
       </div>
       </section>
 
-     <section className="py-8 bg-white-50" id="g1">
+     <section className="py-8 bg-white-50 dark:bg-gray-900" id="g1">
       <div className="container mx-auto px-6" >
-           <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+           <h2 className="text-2xl dark:text-white font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
               Group 1 : Studies in languages and Literature 
             </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ib1.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+              <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
               <div className="space-y-2">
                 {subject.cs && (
                   <button
@@ -595,18 +595,18 @@ export default function Subjects() {
       </div>
     </section>
      
-     <section className="py-8 bg-gray-50" id="g2">
+     <section className="py-8 bg-gray-50 dark:bg-gray-800" id="g2">
       <div className="container mx-auto px-6" >
-      <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+      <h2 className="text-2xl font-bold dark:text-white font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
             Group 2 : Language acquisition
           </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ib2.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+            <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
               <div className="space-y-2">
                 {subject.cs && (
                   <button
@@ -644,18 +644,18 @@ export default function Subjects() {
       </div>
           </section>
 
-     <section className="py-8 bg-white-50" id="g3">
+     <section className="py-8 bg-white-50 dark:bg-gray-900" id="g3">
       <div className="container mx-auto px-6" >
-      <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+      <h2 className="text-2xl dark:text-white font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
       Group 3 : Individuals and societies
     </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ibhumanities.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+              <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
               <div className="space-y-2">
                 {subject.cs && (
                   <button
@@ -693,18 +693,18 @@ export default function Subjects() {
       </div>
           </section>
 
-     <section className="py-8 bg-gray-50" id="g4">
+     <section className="py-8 bg-gray-50 dark:bg-gray-800" id="g4">
       <div className="container mx-auto px-6">
-      <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+      <h2 className="text-2xl font-bold dark:text-white font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
       Group 4 : Sciences 
     </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ibscience.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+            <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
               <div className="space-y-2">
                 {subject.cs && (
                   <button
@@ -742,18 +742,18 @@ export default function Subjects() {
       </div>
           </section>
 
-     <section className="py-8 bg-white-50" id="g5">
+     <section className="py-8 bg-white-50 dark:bg-gray-900" id="g5">
       <div className="container mx-auto px-6">
-      <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+      <h2 className="text-2xl font-bold dark:text-white font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
       Group 5 : Mathematics
     </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ibmath.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
              <div className="space-y-2">
                 {subject.cs && (
                   <button
@@ -791,18 +791,18 @@ export default function Subjects() {
       </div>
           </section>
 
-     <section className="py-8 bg-gray-50"id="g6">
+     <section className="py-8 bg-gray-50 dark:bg-gray-800"id="g6">
       <div className="container mx-auto px-6">
-      <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
+                  <h2 className="text-2xl font-bold dark:text-white font-pacifico text-[#0b131c] mb-4 flex items-center justify-center gap-3">
       Group 6 : Arts
     </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ibArts.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+            <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
               <div className="space-y-2">
                 {subject.cs && (
                   <button
@@ -840,18 +840,18 @@ export default function Subjects() {
       </div>
           </section>
 
-     <section className="py-8 bg-white-50" id="gcore">
+     <section className="py-8 bg-white-50 dark:bg-gray-900" id="gcore">
       <div className="container mx-auto px">
-      <h2 className="text-2xl font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center ">
+      <h2 className="text-2xl dark:text-white font-bold font-pacifico text-[#0b131c] mb-4 flex items-center justify-center ">
       Core Studies
     </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {subjects.ibcore.map((subject, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
+              <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow hover-lift">
               <div className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-xl mb-4">
                 <i className="ri-book-line text-xl text-white"></i>
               </div>
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-2">{subject.name}</h3>
+                  <h3 className="text-lg font-semibold dark:text-white text-[#0b131c] mb-2">{subject.name}</h3>
               <div className="space-y-2">
                 {subject.cs && (
                   <button

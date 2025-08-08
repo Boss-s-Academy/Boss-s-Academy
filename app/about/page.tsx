@@ -28,7 +28,7 @@ export default function About() {
         },
         {
             name: 'Tatenda K. Gogoma',
-            role: 'Head of Marketing & Techinal Advisor',
+            role: 'Head of Marketing & Technical Advisor',
             image: '/images/mark.jpg',
             description: 'Tatenda is the creative force behind Boss’s Academy’s outreach and academic development.With strong IGCSE credentials and tech experience, she drives promotions, contributes to educational content, and advises on user needs—bridging marketing with student - focused impact.'
         },
@@ -92,15 +92,15 @@ export default function About() {
             </section>
 
             {/* Mission Section */}
-            <section className="py-16 bg-gray-50">
+            <section className="py-16 bg-gray-50 dark:bg-gray-800 ">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-4xl font-bold text-[#0b131c] mb-8">Our Mission</h2>
+                        <h2 className="text-4xl font-bold dark:text-white text-[#0b131c] mb-8">Our Mission</h2>
                         <p className="text-xl text-[#a6a6a6] mb-8">
                             At Boss's Academy, we believe that every student deserves access to high-quality educational resources that inspire learning and foster academic excellence. Founded on January 23, 2023, our mission is to bridge the gap between traditional education and modern learning needs.
                         </p>
 
-                        <div className="bg-white p-4 rounded-lg shadow-lg">
+                        <div className="bg-white dark:bg-gray-900 p-10 rounded-lg shadow-lg">
                             <div
                                 className="text-4xl sm:text-2xl md:text-6xl font-bold text-[#edb232] mb-4 break-words leading-tight"
                                 style={{ fontFamily: 'Pacifico, serif' }}
@@ -116,11 +116,11 @@ export default function About() {
             </section>
 
             {/* Story Section */}
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-white dark:bg-gray-900">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h2 className="text-4xl font-bold text-[#0b131c] mb-6">Our Story</h2>
+                            <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-6">Our Story</h2>
                             <p className="text-lg text-[#a6a6a6] mb-6">
                                 Boss’s Academy was founded on January 23, 2023, with a vision to bridge the gap in quality education for students across Botswana and beyond. What began as a simple idea to make learning resources more accessible has grown into a full-fledged platform—offering free notes, past papers, interactive quizzes, and more for IGCSE, A-Level, and IB learners.
                             </p>
@@ -150,51 +150,51 @@ export default function About() {
             </section>
 
             {/* Values Section */}
-            <section className="py-16 bg-gray-50">
+            <section className="py-16 bg-gray-50 dark:bg-gray-800">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Our Core Values</h2>
+                        <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Our Core Values</h2>
                         <p className="text-xl text-[#a6a6a6]">
                             The principles that guide our mission and define our approach to education
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg text-center">
                             <div className="w-16 h-16 flex items-center justify-center bg-[#edb232] rounded-full mx-auto mb-4">
                                 <i className="ri-lightbulb-line text-2xl text-[#0b131c]"></i>
                             </div>
-                            <h3 className="text-xl font-semibold text-[#0b131c] mb-3">Innovation</h3>
+                            <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-3">Innovation</h3>
                             <p className="text-[#a6a6a6]">
                                 We continuously evolve our methods and tools to meet the changing needs of modern education.
                             </p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div className="bg-white p-6 dark:bg-gray-900 rounded-lg shadow-lg text-center">
                             <div className="w-16 h-16 flex items-center justify-center bg-[#325d8e] rounded-full mx-auto mb-4">
                                 <i className="ri-shield-check-line text-2xl text-white"></i>
                             </div>
-                            <h3 className="text-xl font-semibold text-[#0b131c] mb-3">Quality</h3>
+                            <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-3">Quality</h3>
                             <p className="text-[#a6a6a6]">
                                 Every resource we provide is carefully curated and reviewed by educational experts.
                             </p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div className="bg-white p-6 dark:bg-gray-900 rounded-lg shadow-lg text-center">
                             <div className="w-16 h-16 flex items-center justify-center bg-[#edb232] rounded-full mx-auto mb-4">
                                 <i className="ri-group-line text-2xl text-[#0b131c]"></i>
                             </div>
-                            <h3 className="text-xl font-semibold text-[#0b131c] mb-3">Accessibility</h3>
+                            <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-3">Accessibility</h3>
                             <p className="text-[#a6a6a6]">
                                 We believe quality education should be accessible to all students, regardless of location.
                             </p>
                         </div>
 
-                        <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div className="bg-white p-6 dark:bg-gray-900 rounded-lg shadow-lg text-center">
                             <div className="w-16 h-16 flex items-center justify-center bg-[#325d8e] rounded-full mx-auto mb-4">
                                 <i className="ri-heart-line text-2xl text-white"></i>
                             </div>
-                            <h3 className="text-xl font-semibold text-[#0b131c] mb-3">Empowerment</h3>
+                            <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-3">Empowerment</h3>
                             <p className="text-[#a6a6a6]">
                                 We empower students to take control of their learning journey and achieve their goals.
                             </p>
@@ -204,10 +204,10 @@ export default function About() {
             </section>
 
             {/* Team Section */}
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-white dark:bg-gray-900">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Meet Our Team</h2>
+                        <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Meet Our Team</h2>
                         <p className="text-xl text-[#a6a6a6]">
                             The passionate educators and innovators behind Boss's Academy
                         </p>
@@ -215,14 +215,14 @@ export default function About() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-lg text-center">
+                            <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
                                 <div
                                     className="w-48 h-48 bg-cover bg-center rounded-xl mx-auto mb-4"
                                     style={{
                                         backgroundImage: `url('${member.image}')`
                                     }}
                                 ></div>
-                                <h3 className="text-xl font-semibold text-[#0b131c] mb-2">{member.name}</h3>
+                                <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-2">{member.name}</h3>
                                 <p className="text-[#edb232] font-semibold mb-3">{member.role}</p>
                                 <p className="text-[#a6a6a6] text-sm">{member.description}</p>
                             </div>
@@ -232,24 +232,24 @@ export default function About() {
             </section>
 
             {/* Timeline Section */}
-            <section className="py-16 bg-gray-50">
+            <section className="py-16 bg-gray-50 dark:bg-gray-800">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Our Journey</h2>
+                        <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Our Journey</h2>
                         <p className="text-xl text-[#a6a6a6]">
                             Key milestones in our mission to transform education
                         </p>
                     </div>
 
-                    <div className="max-w-4xl mx-auto">
+                    <div className="max-w-4xl  mx-auto">
                         <div className="space-y-8">
                             {milestones.map((milestone, index) => (
                                 <div key={index} className="flex items-start">
                                     <div className="flex-shrink-0 w-20 h-20 bg-[#edb232] rounded-full flex items-center justify-center mr-6">
                                         <span className="text-xl font-bold text-[#0b131c]">{milestone.year}</span>
                                     </div>
-                                    <div className="bg-white p-6 rounded-lg shadow-lg flex-1">
-                                        <h3 className="text-xl font-semibold text-[#0b131c] mb-2">{milestone.title}</h3>
+                                    <div className="bg-white p-6 dark:bg-gray-900 rounded-lg shadow-lg flex-1">
+                                        <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-2">{milestone.title}</h3>
                                         <p className="text-[#a6a6a6]">{milestone.description}</p>
                                     </div>
                                 </div>

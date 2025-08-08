@@ -374,13 +374,13 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6 py-12">
           <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded w-1/4 mb-6"></div>
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-1/4 mb-6"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="h-32 bg-gray-200 rounded-lg"></div>
+                  <div key={i} className="h-32 bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
               ))}
             </div>
           </div>
@@ -413,23 +413,23 @@ export default function Dashboard() {
   const userLevel = preferences?.level || '';
 
   return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
           <Header />
       <div className="container mx-auto px-6 py-12">
               {profileData.userType === 'student' && (
                   <>
                       {/* Welcome Header */}
                       <div className="mb-8">
-                          <h1 className="text-3xl font-bold text-[#0b131c] mb-2">
+                          <h1 className="text-3xl dark:text-white font-bold text-[#0b131c] mb-2">
                               Welcome back, {profileData.firstname && profileData.lastname
                                   ? `${profileData.firstname} ${profileData.lastname}`
                                   : user?.displayName || 'User'}!
                           </h1>
-                          <p className="text-gray-600">Ready to continue your learning journey?</p>
+                          <p className="text-[#a6a6a6]">Ready to continue your learning journey?</p>
                       </div>
 
                       {/* User Info Card */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm p-6 mb-8">
                           <div className="flex items-center space-x-4">
                               <div className="w-16 h-16 bg-[#edb232] rounded-full flex items-center justify-center">
                                   <span className="text-2xl font-bold text-[#0b131c]">
@@ -437,22 +437,22 @@ export default function Dashboard() {
                                   </span>
                               </div>
                               <div>
-                                  <h2 className="text-xl font-semibold text-[#0b131c]">
+                                  <h2 className="text-xl dark:text-white font-semibold text-[#0b131c]">
                                       {profileData.firstname && profileData.lastname
                                           ? `${profileData.firstname} ${profileData.lastname}`
                                           : user?.displayName || 'User'}
                                   </h2>
-                                  <p className="text-gray-600">{user?.email}</p>
-                                  <p className="text-gray-600">School: {profileData.school}</p>
+                                  <p className="text-[#a6a6a6]">{user?.email}</p>
+                                  <p className="text-[#a6a6a6]">School: {profileData.school}</p>
                                   <p className="text-sm text-[#325d8e] font-medium">Level: {profileData.level}</p>
                               </div>
                           </div>
                       </div>
 
                       {/* Your Subjects */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm  p-6 mb-8">
                           <div className="flex items-center justify-between mb-4">
-                              <h3 className="text-xl font-semibold text-[#0b131c]">Your Subjects</h3>
+                              <h3 className="text-xl dark:text-white font-semibold text-[#0b131c]">Your Subjects</h3>
                               <Link href="/profile" className="text-[#325d8e] hover:text-[#edb232] transition-colors cursor-pointer">
                                   Change Subject
                               </Link>
@@ -461,14 +461,14 @@ export default function Dashboard() {
                           {userSubjects.length > 0 ? (
                               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                   {userSubjects.map((subject, index) => (
-                                      <div key={index} className="border border-gray-200 rounded-lg p-4 hover:border-[#edb232] transition-colors cursor-pointer">
+                                      <div key={index} className="dark:bg-gray-800 bg-gray-50 rounded-lg p-4 hover:border-[#edb232] transition-colors cursor-pointer">
                                           <div className="flex items-center space-x-3">
                                               <div className="w-10 h-10 bg-[#edb232]/20 rounded-lg flex items-center justify-center">
                                                   <i className="ri-book-open-line text-[#edb232]"></i>
                                               </div>
                                               <div>
-                                                  <h4 className="font-medium text-[#0b131c]">{subject}</h4>
-                                                  <p className="text-sm text-gray-600">{userLevel}</p>
+                                                  <h4 className="font-medium dark:text-white text-[#0b131c]">{subject}</h4>
+                                                  <p className="text-sm text-gray-600">{profileData.level}</p>
                                               </div>
                                           </div>
                                       </div>
@@ -487,23 +487,23 @@ export default function Dashboard() {
                           )}
                       </div>
                       {/* Your Assignment */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm  p-6 mb-8">
                           <div className="flex items-center justify-between mb-4">
-                              <h3 className="text-xl font-semibold text-[#0b131c]">Your Asignments</h3>
+                              <h3 className="text-xl dark:text-white  font-semibold text-[#0b131c]">Your Asignments</h3>
                           </div>
 
                           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                               {/* Unseen Assignments */}
                               <div>
-                                  <h3 className="text-lg font-semibold text-[#0b131c] mb-4">Unseen Assignments</h3>
+                                  <h3 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-4">Unseen Assignments</h3>
                                   {unseenAssignments.length > 0 ? (
                                       <div className="space-y-4">
                                           {unseenAssignments.map((a, i) => (
-                                              <div key={i} className="border p-4 rounded-lg flex justify-between items-start">
+                                              <div key={i} className="dark:bg-gray-800 bg-gray-50 p-4 rounded-lg flex justify-between items-start">
                                                   <div>
-                                                      <h4 className="font-medium text-[#0b131c]">{a.title}</h4>
-                                                      <p className="text-sm text-gray-500">{a.description}</p>
-                                                      <p className="text-sm text-gray-400">{a.dueDate} at {a.dueTime}</p>
+                                                      <h4 className="font-medium dark:text-white text-[#0b131c]">{a.title}</h4>
+                                                      <p className="text-sm text-[#a6a6a6]">{a.description}</p>
+                                                      <p className="text-sm text-[#a6a6a6]"> Due Date and Time: {a.dueDate} at {a.dueTime}</p>
                                                   </div>
                                                   <button
                                                       className="bg-[#edb232] hover:bg-[#edb232]/90 text-[#0b131c] text-xs px-3 py-1 rounded"
@@ -521,14 +521,14 @@ export default function Dashboard() {
 
                               {/* Seen Assignments */}
                               <div>
-                                  <h3 className="text-lg font-semibold text-[#0b131c] mb-4">Seen Assignments</h3>
+                                  <h3 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-4">Seen Assignments</h3>
                                   {seenAssignments.length > 0 ? (
-                                      <div className="space-y-4">
+                                      <div className="space-y-4 ">
                                           {seenAssignments.map((a, i) => (
-                                              <div key={i} className="border p-4 rounded-lg">
-                                                  <h4 className="font-medium text-[#0b131c]">{a.title}</h4>
-                                                  <p className="text-sm text-gray-500">{a.description}</p>
-                                                  <p className="text-sm text-gray-400">{a.dueDate} at {a.dueTime}</p>
+                                              <div key={i} className="dark:bg-gray-800 p-4 rounded-lg">
+                                                  <h4 className="font-medium dark:text-white text-[#0b131c]">{a.title}</h4>
+                                                  <p className="text-sm text-[#a6a6a6]">{a.description}</p>
+                                                  <p className="text-sm text-[#a6a6a6]">{a.dueDate} at {a.dueTime}</p>
                                               </div>
                                           ))}
                                       </div>
@@ -540,18 +540,18 @@ export default function Dashboard() {
                       </div>
 
                       {/* Study Tracker */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white rounded-lg shadow-sm dark:bg-gray-900 p-6 mb-8">
                           <div className="flex items-center justify-between mb-4">
-                              <h3 className="text-xl font-semibold text-[#0b131c]">Study Tracker</h3>
+                              <h3 className="text-xl dark:text-white font-semibold text-[#0b131c]">Study Tracker</h3>
                           </div>
 
                           {studyData.length > 0 ? (
                               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                   {studyData.map((item, index) => (
-                                      <div key={index} className="border border-gray-200 rounded-lg p-4 hover:border-[#edb232] transition-colors cursor-pointer">
-                                          <h4 className="text-lg font-semibold text-[#0b131c]">{item.subject}</h4>
+                                      <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 hover:border-[#edb232] transition-colors cursor-pointer">
+                                          <h4 className="text-lg dark:text-white font-semibold text-[#0b131c]">{item.subject}</h4>
                                           <div className="mb-2">
-                                              <p className="text-sm text-gray-600">
+                                              <p className="text-sm text-[#a6a6a6]">
                                                   {item.dailyTimeStudied} / {item.expectedDuration} mins
                                               </p>
                                               <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
@@ -563,8 +563,8 @@ export default function Dashboard() {
                                                   ></div>
                                               </div>
                                           </div>
-                                          <p className="text-sm text-gray-600">Total Time: {item.totalTimeStudied} mins</p>
-                                          <p className="text-xs text-gray-400 mt-2">Last updated: {item.lastUpdated}</p>
+                                          <p className="text-sm text-[#a6a6a6]">Total Time: {item.totalTimeStudied} mins</p>
+                                          <p className="text-xs text-[#a6a6a6] mt-2">Last updated: {item.lastUpdated}</p>
                                       </div>
                                   ))}
                               </div>
@@ -581,16 +581,16 @@ export default function Dashboard() {
                   <>
                       {/* Welcome Header */}
                       <div className="mb-8">
-                          <h1 className="text-3xl font-bold text-[#0b131c] mb-2">
+                          <h1 className="text-3xl dark:text-white font-bold text-[#0b131c] mb-2">
                               Welcome back, {profileData.firstname && profileData.lastname
                                   ? `${profileData.firstname} ${profileData.lastname}`
                                   : user?.displayName || 'User'}!
                           </h1>
-                          <p className="text-gray-600">Ready to continue your learning journey?</p>
+                          <p className="text-[#a6a6a6]">Ready to continue your learning journey?</p>
                       </div>
 
                       {/* User Info Card */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white dark:border-gray-900  dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
                           <div className="flex items-center space-x-4">
                               <div className="w-16 h-16 bg-[#edb232] rounded-full flex items-center justify-center">
                                   <span className="text-2xl font-bold text-[#0b131c]">
@@ -598,21 +598,21 @@ export default function Dashboard() {
                                   </span>
                               </div>
                               <div>
-                                  <h2 className="text-xl font-semibold text-[#0b131c]">
+                                  <h2 className="text-xl dark:text-white font-semibold text-[#0b131c]">
                                       {profileData.firstname && profileData.lastname
                                           ? `${profileData.firstname} ${profileData.lastname}`
                                           : user?.displayName || 'User'}
                                   </h2>
-                                  <p className="text-gray-600">{user?.email}</p>
-                                  <p className="text-gray-600">School: {profileData.school}</p>
+                                  <p className="text-[#a6a6a6]">{user?.email}</p>
+                                  <p className="text-[#a6a6a6]">School: {profileData.school}</p>
                               </div>
                           </div>
                       </div>
 
                       {/* Your Subjects */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white dark:bg-gray-900 dark:border-gray-900 p-6 rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
                           <div className="flex items-center justify-between mb-4">
-                              <h3 className="text-xl font-semibold text-[#0b131c]">Your Subjects</h3>
+                              <h3 className="text-xl dark:text-white font-semibold text-[#0b131c]">Your Subjects</h3>
                               <Link href="/profile" className="text-[#325d8e] hover:text-[#edb232] transition-colors cursor-pointer">
                                   Change Subject
                               </Link>
@@ -621,13 +621,13 @@ export default function Dashboard() {
                           {userSubjects.length > 0 ? (
                               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                   {userSubjects.map((subject, index) => (
-                                      <div key={index} className="border border-gray-200 rounded-lg p-4 hover:border-[#edb232] transition-colors cursor-pointer">
+                                      <div key={index} className="border border-gray-200 rounded-lg p-4 hover:border-[#edb232] dark:border-gray-900 dark:bg-gray-800 hover:border-[#edb232] dark:hover:border-[#edb232] transition-colors cursor-pointer">
                                           <div className="flex items-center space-x-3">
                                               <div className="w-10 h-10 bg-[#edb232]/20 rounded-lg flex items-center justify-center">
                                                   <i className="ri-book-open-line text-[#edb232]"></i>
                                               </div>
                                               <div>
-                                                  <h4 className="font-medium text-[#0b131c]">{subject}</h4>
+                                                  <h4 className="font-medium dark:text-white text-[#0b131c]">{subject}</h4>
                                                   <p className="text-sm text-gray-600">{userLevel}</p>
                                               </div>
                                           </div>
@@ -648,16 +648,16 @@ export default function Dashboard() {
                       </div>
 
                       {/* Your classes */}
-                      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+                      <div className="bg-white dark:bg-gray-900 dark:border-gray-900 rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
                           <div className="flex items-center justify-between mb-4">
-                              <h3 className="text-xl font-semibold text-[#0b131c]">Your Classes</h3>
+                              <h3 className="text-xl dark:text-white font-semibold text-[#0b131c]">Your Classes</h3>
                           </div>
                           <div>
                               {teacherClasses.length > 0 ? (
                                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                       {teacherClasses.map((subjectBlock, idx) => (
                                           <div key={idx}>
-                                              <h4 className="text-lg font-semibold text-[#0b131c] mb-2">
+                                              <h4 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-2">
                                                   {subjectBlock.subject}
                                               </h4>
                                               <ul className="list-disc list-inside text-gray-700 space-y-1">
@@ -665,14 +665,14 @@ export default function Dashboard() {
                                                       <div
                                                           key={index}
                                                           onClick={() => handleClassClick(subjectBlock.subject, className)}
-                                                          className="border border-gray-200 rounded-lg p-4 px-5 hover:border-[#edb232] transition-colors cursor-pointer"
+                                                          className="border dark:border-gray-900 dark:bg-gray-800 hover:border-[#edb232] dark:hover:border-[#edb232] border-gray-200 rounded-lg p-4 px-5 hover:border-[#edb232] transition-colors cursor-pointer"
                                                       >
                                                           <div className="flex items-center space-x-3">
                                                               <div className="w-10 h-10 bg-[#edb232]/20 rounded-lg flex items-center justify-center">
                                                                   <i className="ri-book-open-line text-[#edb232]"></i>
                                                               </div>
                                                               <div>
-                                                                  <h4 className="font-medium text-[#0b131c]">{className}</h4>
+                                                                  <h4 className="font-medium dark:text-white text-[#0b131c]">{className}</h4>
                                                               </div>
                                                           </div>
                                                       </div>
@@ -689,15 +689,15 @@ export default function Dashboard() {
 
                       {/* Your student detail */}
                       {selectedClassName && selectedSubject && (
-                          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8" id="student-section">
+                          <div className="bg-white dark:bg-gray-900 dark:border-gray-900 rounded-lg shadow-sm border border-gray-200 p-6 mb-8" id="student-section">
                               <div className="flex items-center justify-between mb-4">
-                                  <h3 className="text-xl font-semibold text-[#0b131c]">
+                                  <h3 className="text-xl dark:text-white font-semibold text-[#0b131c]">
                                       Your Students Data in {selectedClassName} ({selectedSubject})
                                   </h3>
                               </div>
 
                               {loading1 === true && (
-                                  <div className="min-h-screen bg-gray-50">
+                                  <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
                                       <div className="container mx-auto px-6 py-12">
                                           <div className="animate-pulse">
                                               <div className="h-8 bg-gray-200 rounded w-1/4 mb-6"></div>
@@ -714,16 +714,16 @@ export default function Dashboard() {
                               {loading1 === false && selectedClassStudents.length > 0 &&(
                                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                                       {selectedClassStudents.map((studentData: any, index) => (
-                                          <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                                              <h4 className="text-lg font-semibold mb-2">
+                                          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border dark:border-gray-900 p-6  border-gray-200 p-6">
+                                              <h4 className="text-lg dark:text-white font-semibold mb-2">
                                                   {studentData.student.fullName}
                                               </h4>
-                                              <p className="text-sm text-gray-600 mb-1">Email: {studentData.student.email}</p>
+                                              <p className="text-sm text-[#a6a6a6] mb-1">Email: {studentData.student.email}</p>
                                               <div className="mb-2">
-                                                  <p className="text-sm text-gray-600">
+                                                  <p className="text-sm text-[#a6a6a6]">
                                                       {studentData.studyData.dailyTimeStudied} / {studentData.studyData.expectedTime} mins
                                                   </p>
-                                                  <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
+                                                  <div className="w-full bg-[#a6a6a6] rounded-full h-2 mt-1">
                                                       <div
                                                           className="bg-[#edb232] h-2 rounded-full transition-all duration-500"
                                                           style={{
@@ -736,10 +736,10 @@ export default function Dashboard() {
                                               <p className="text-xs text-gray-400 mt-2">Last updated: {studentData.studyData.lastUpdated}</p>
 
                                               <div className="mt-4">
-                                                  <h5 className="font-medium">Assignments</h5>
+                                                  <h5 className="font-medium dark:text-white">Assignments</h5>
                                                   {studentData.assignments.length > 0 ? (
                                                       studentData.assignments.map((a: AssignmentType, idx: number) => (
-                                                          <div key={idx} className="text-sm mt-1 p-2 bg-gray-50 rounded border">
+                                                          <div key={idx} className="text-sm dark:border-gray-800 dark:text-[#a6a6a6] dark:bg-gray-800 mt-1 p-2 bg-gray-50 rounded border">
                                                               <strong>{a.name}</strong> — Due: {a.dueDate}<br />
                                                               {a.openedDetails}
                                                           </div>
@@ -759,35 +759,35 @@ export default function Dashboard() {
 
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Link href="/subjects" className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:border-[#edb232] transition-colors cursor-pointer">
+                  <Link href="/subjects" className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-900 p-6 hover:border-[#edb232] dark:hover:border-[#edb232] transition-colors cursor-pointer">
             <div className="w-12 h-12 bg-[#edb232]/20 rounded-lg flex items-center justify-center mb-4">
               <i className="ri-book-open-line text-xl text-[#edb232]"></i>
             </div>
-            <h4 className="font-semibold text-[#0b131c] mb-2">Study Materials</h4>
+            <h4 className="font-semibold dark:text-white text-[#0b131c] mb-2">Study Materials</h4>
             <p className="text-sm text-gray-600">Access notes and past papers</p>
           </Link>
           
-          <Link href="/studytok" className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:border-[#edb232] transition-colors cursor-pointer">
+                  <Link href="/studytok" className="bg-white rounded-lg dark:bg-gray-900 shadow-sm border border-gray-200 dark:border-gray-900 p-6 hover:border-[#edb232] dark:hover:border-[#edb232] transition-colors cursor-pointer">
             <div className="w-12 h-12 bg-[#325d8e]/20 rounded-lg flex items-center justify-center mb-4">
               <i className="ri-question-line text-xl text-[#325d8e]"></i>
             </div>
-            <h4 className="font-semibold text-[#0b131c] mb-2">StudyTok Quiz</h4>
+            <h4 className="font-semibold dark:text-white text-[#0b131c] mb-2">StudyTok Quiz</h4>
             <p className="text-sm text-gray-600">Practice with our quiz app</p>
           </Link>
           
-          <Link href="/flashcards" className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:border-[#edb232] transition-colors cursor-pointer">
+                  <Link href="/flashcards" className="bg-white rounded-lg shadow-sm dark:bg-gray-900 border border-gray-200 dark:border-gray-900 p-6 hover:border-[#edb232] dark:hover:border-[#edb232] transition-colors cursor-pointer">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
               <i className="ri-stack-line text-xl text-purple-600"></i>
             </div>
-            <h4 className="font-semibold text-[#0b131c] mb-2">Flashcards</h4>
+            <h4 className="font-semibold dark:text-white text-[#0b131c] mb-2">Flashcards</h4>
             <p className="text-sm text-gray-600">Coming soon feature</p>
           </Link>
           
-          <Link href="/contact" className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:border-[#edb232] transition-colors cursor-pointer">
+                  <Link href="/contact" className="bg-white rounded-lg shadow-sm border dark:bg-gray-900 border-gray-200 dark:border-gray-900 p-6 hover:border-[#edb232] dark:hover:border-[#edb232] transition-colors cursor-pointer">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
               <i className="ri-customer-service-line text-xl text-green-600"></i>
             </div>
-            <h4 className="font-semibold text-[#0b131c] mb-2">Get Help</h4>
+            <h4 className="font-semibold dark:text-white text-[#0b131c] mb-2">Get Help</h4>
             <p className="text-sm text-gray-600">Contact our support team</p>
           </Link>
               </div>

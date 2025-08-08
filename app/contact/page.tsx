@@ -107,10 +107,10 @@ const handleSubmit = async (e: React.FormEvent) => {
       </section>
 
       {/* Contact Methods Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Get in Touch</h2>
+            <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Get in Touch</h2>
             <p className="text-xl text-[#a6a6a6]">
               Choose the best way to reach us
             </p>
@@ -118,11 +118,11 @@ const handleSubmit = async (e: React.FormEvent) => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 flex items-center justify-center bg-[#edb232] rounded-full mx-auto mb-4">
                   <i className={`${method.icon} text-2xl text-[#0b131c]`}></i>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0b131c] mb-3">{method.title}</h3>
+                <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-3">{method.title}</h3>
                 <p className="text-[#a6a6a6] mb-4">{method.description}</p>
                 <Link href={method.action} className="text-[#325d8e] hover:text-[#d4a02c] font-semibold cursor-pointer">
                   {method.contact} →
@@ -134,7 +134,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-white" id="form">
+      <section className="py-16 bg-white dark:bg-gray-900" id="form">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -144,7 +144,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 {error}
               </div>
             )}
-                <h2 className="text-4xl font-bold text-[#0b131c] mb-6">Send us a Message</h2>
+                <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-6">Send us a Message</h2>
                 <p className="text-lg text-[#a6a6a6] mb-8">
                   Fill out the form below and we'll get back to you as soon as possible. Whether you have questions about our resources, need technical support, or want to provide feedback, we're here to help.
                 </p>
@@ -155,7 +155,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <i className="ri-time-line text-white"></i>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#0b131c]">Response Time</h3>
+                      <h3 className="font-semibold dark:text-white text-[#0b131c]">Response Time</h3>
                       <p className="text-[#a6a6a6]">We typically respond within 24 hours</p>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <i className="ri-shield-check-line text-[#0b131c]"></i>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#0b131c]">Privacy</h3>
+                      <h3 className="font-semibold dark:text-white text-[#0b131c]">Privacy</h3>
                       <p className="text-[#a6a6a6]">Your information is secure and confidential</p>
                     </div>
                   </div>
@@ -175,17 +175,17 @@ const handleSubmit = async (e: React.FormEvent) => {
                       <i className="ri-customer-service-2-line text-white"></i>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#0b131c]">Support</h3>
+                      <h3 className="font-semibold dark:text-white text-[#0b131c]">Support</h3>
                       <p className="text-[#a6a6a6]">Dedicated team ready to assist you</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg">
                 <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#0b131c] mb-2">
+                    <label htmlFor="name" className="block dark:text-white text-sm font-medium text-[#0b131c] mb-2">
                       Full Name *
                     </label>
                     <input
@@ -201,7 +201,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#0b131c] mb-2">
+                    <label htmlFor="email" className="block text-sm dark:text-white font-medium text-[#0b131c] mb-2">
                       Email Address *
                     </label>
                     <input
@@ -217,7 +217,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-[#0b131c] mb-2">
+                    <label htmlFor="subject" className="block text-sm dark:text-white font-medium text-[#0b131c] mb-2">
                       Subject *
                     </label>
                     <select
@@ -239,7 +239,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#0b131c] mb-2">
+                    <label htmlFor="message" className="block text-sm dark:text-white font-medium text-[#0b131c] mb-2">
                       Message *
                     </label>
                     <textarea
@@ -287,39 +287,39 @@ const handleSubmit = async (e: React.FormEvent) => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50" id="faq">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800" id="faq">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Frequently Asked Questions</h2>
             <p className="text-xl text-[#a6a6a6]">
               Quick answers to common questions
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-3">How do I access the study materials?</h3>
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+              <h3 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-3">How do I access the study materials?</h3>
               <p className="text-[#a6a6a6]">
                 Simply browse our Subjects page and click on the download buttons for notes or past papers. All materials are free to access.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-3">When will StudyTok be available?</h3>
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+              <h3 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-3">When will StudyTok be available?</h3>
               <p className="text-[#a6a6a6]">
                 We're working hard to launch StudyTok soon. Join our notification list to be the first to know when it's ready.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-3">Do you offer personalized tutoring?</h3>
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+              <h3 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-3">Do you offer personalized tutoring?</h3>
               <p className="text-[#a6a6a6]">
                 Currently, we focus on providing high-quality resources. Contact us to discuss your specific needs and we'll see how we can help.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg font-semibold text-[#0b131c] mb-3">How can I suggest new resources?</h3>
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
+              <h3 className="text-lg dark:text-white font-semibold text-[#0b131c] mb-3">How can I suggest new resources?</h3>
               <p className="text-[#a6a6a6]">
                 We love hearing from our users! Use the contact form above with "Resource Request" as the subject to share your suggestions.
               </p>

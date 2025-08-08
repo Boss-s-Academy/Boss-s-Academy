@@ -63,10 +63,10 @@ export default function StudyTok() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0b131c] mb-4">Why Choose StudyTok?</h2>
+            <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-4">Why Choose StudyTok?</h2>
             <p className="text-xl text-[#a6a6a6]">
               Revolutionary features designed to make learning engaging and effective
             </p>
@@ -74,11 +74,11 @@ export default function StudyTok() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+                <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 flex items-center justify-center bg-[#edb232] rounded-full mx-auto mb-4">
                   <i className={`${feature.icon} text-2xl text-[#0b131c]`}></i>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0b131c] mb-3">{feature.title}</h3>
+                <h3 className="text-xl dark:text-white font-semibold text-[#0b131c] mb-3">{feature.title}</h3>
                 <p className="text-[#a6a6a6]">{feature.description}</p>
               </div>
             ))}
@@ -87,11 +87,11 @@ export default function StudyTok() {
       </section>
 
       {/* App Preview Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-[#0b131c] mb-6">
+              <h2 className="text-4xl dark:text-white font-bold text-[#0b131c] mb-6">
                 Learning Made Simple
               </h2>
               <p className="text-lg text-[#a6a6a6] mb-6">
@@ -103,25 +103,25 @@ export default function StudyTok() {
                   <div className="w-8 h-8 flex items-center justify-center bg-[#325d8e] rounded-full mr-4">
                     <i className="ri-check-line text-white"></i>
                   </div>
-                  <span className="text-[#0b131c]">Offline quiz functionality</span>
+                  <span className="text-[#0b131c] dark:text-white">Offline quiz functionality</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 flex items-center justify-center bg-[#325d8e] rounded-full mr-4">
                     <i className="ri-check-line text-white"></i>
                   </div>
-                  <span className="text-[#0b131c]">Personalized learning paths</span>
+                  <span className="text-[#0b131c] dark:text-white">Personalized learning paths</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 flex items-center justify-center bg-[#325d8e] rounded-full mr-4">
                     <i className="ri-check-line text-white"></i>
                   </div>
-                  <span className="text-[#0b131c]">Real-time progress tracking</span>
+                  <span className="text-[#0b131c] dark:text-white">Real-time progress tracking</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-8 h-8 flex items-center justify-center bg-[#325d8e] rounded-full mr-4">
                     <i className="ri-check-line text-white"></i>
                   </div>
-                  <span className="text-[#0b131c]">Comprehensive subject coverage</span>
+                  <span className="text-[#0b131c] dark:text-white">Comprehensive subject coverage</span>
                 </div>
               </div>
             </div>
