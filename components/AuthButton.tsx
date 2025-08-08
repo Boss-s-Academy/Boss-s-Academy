@@ -79,23 +79,27 @@ export default function AuthButton() {
   if (user) {
     return (
         <div className="relative">
-        <button
-          onClick={() => setShowDropdown(!showDropdown)}
-          className="flex items-center space-x-2 text-white  transition-colors cursor-pointer"
-        >
+            <div className="flex items-center ">
+
                 <ThemeToogle />
-          <div className="w-8 h-8 bg-[#edb232] rounded-full flex hover:text-[#edb232] items-center justify-center">
-            <span className="text-[#0b131c] font-semibold text-sm">
-              {profileData.firstname?.charAt(0) || user?.email?.charAt(0)}
-            </span>
-          </div>
-          <span className=" whitespace-nowrap hover:text-[#edb232]">
-            {profileData.firstname && profileData.lastname
-                      ? `${profileData.firstname} ${profileData.lastname}`
-                      : user?.displayName || 'User'}
-          </span>
-          <i className="ri-arrow-down-s-line w-4 h-4 flex items-center justify-center"></i>
-        </button>
+                <button
+                    onClick={() => setShowDropdown(!showDropdown)}
+                    className="flex items-center space-x-2 text-white hover:text-[#edb232] transition-colors cursor-pointer"
+                >
+
+                    <div className="w-8 h-8 bg-[#edb232] rounded-full flex  items-center justify-center">
+                        <span className="text-[#0b131c] font-semibold text-sm">
+                            {profileData.firstname?.charAt(0) || user?.email?.charAt(0)}
+                        </span>
+                    </div>
+                    <span className=" whitespace-nowrap hover:text-[#edb232]">
+                        {profileData.firstname && profileData.lastname
+                            ? `${profileData.firstname} ${profileData.lastname}`
+                            : user?.displayName || 'User'}
+                    </span>
+                    <i className="ri-arrow-down-s-line w-4 h-4 flex items-center justify-center"></i>
+                </button>
+            </div>
 
         {showDropdown && (
           <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
